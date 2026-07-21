@@ -1,44 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DecodeLabs | Full Stack Project 1 - Responsive Layout</title>
     <link rel="stylesheet" href="style.css">
-
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <header class="box1">
-        <h1>Welcome to Decode Labs</h1>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-code"></i> Decode<span>Labs</span>
+        </div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#modules">Modules</a>
+            <a href="#tracker">Task Tracker</a>
+            <a href="#support">Support</a>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </header>
-    <button id="theme-toggle">Toggle Dark/Light Mode</button>
-    <main class="page-layout">
-        <section class="left-column">
-            <div class="box2">
-                <article class="inner-card">
-                    <h2>Card-1</h2>
-                    <p>Some cool text here.</p>
-                </article>
-                <article class="inner-card">
-                    <h2>Card-2</h2>
-                    <p>Some cool text here.</p>
-                </article>
-                <article class="inner-card">
-                    <h2>Card-3</h2>
-                    <p>Some cool text here.</p>
-                </article>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">Batch 2026 | Industrial Training Kit</span>
+            <h1>Full Stack Development</h1>
+            <h2>Project 1: The Responsive Layout</h2>
+            <p>Step into the role of a Full Stack Developer at DecodeLabs. Master adaptability, fluid grids, and modern UI engineering before connecting complex backend databases.</p>
+            <div class="hero-buttons">
+                <a href="#tracker" class="btn primary-btn">Start Project Tasks</a>
+                <a href="#modules" class="btn secondary-btn">Explore Modules</a>
             </div>
-        </section>
-        <aside class="right-column">
-            <div class="box3">
-                <h3>Sidebar</h3>
-                <p>Extra information goes here.</p>
+        </div>
+        <div class="hero-image">
+            <div class="card-stack">
+                <div class="tech-card"><i class="fa-brands fa-html5" style="color: #e34f26;"></i> HTML5 Semantic Structure</div>
+                <div class="tech-card"><i class="fa-brands fa-css3-alt" style="color: #264de4;"></i> CSS Flexbox & Grid</div>
+                <div class="tech-card"><i class="fa-brands fa-js" style="color: #f7df1e;"></i> Interactive JavaScript UI</div>
             </div>
-        </aside>
-    </main>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="modules-section">
+        <h2>Project Learning Modules</h2>
+        <div class="modules-grid">
+            <div class="module-card">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <h3>Fluid Grid & Breakpoints</h3>
+                <p>Learn how to design layouts that gracefully adapt across mobile, tablet, and widescreen desktop displays.</p>
+            </div>
+            <div class="module-card">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>CSS Flexbox & Grid</h3>
+                <p>Master modern CSS alignment, wrapping, and 2D grid structuring for robust, scalable UI components.</p>
+            </div>
+            <div class="module-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Interactive DOM Elements</h3>
+                <p>Use JavaScript to handle mobile navigation toggles, dynamic task states, and real-time user feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task Tracker Section (Interactive JS Component) -->
+    <section id="tracker" class="tracker-section">
+        <h2>Project 1 Checklist & Milestone Tracker</h2>
+        <p>Track your progress across the mandatory milestones for Project 1.</p>
+        
+        <div class="tracker-container">
+            <div class="progress-bar-container">
+                <div class="progress-info">
+                    <span>Progress</span>
+                    <span id="progressText">0% Complete</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <form id="taskForm" class="task-form">
+                <input type="text" id="taskInput" placeholder="Add custom task or checkpoint..." required>
+                <button type="submit" class="btn primary-btn">Add Task</button>
+            </form>
+
+            <ul id="taskList" class="task-list">
+                <!-- Dynamically populated by JavaScript -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 DecodeLabs Industrial Training. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-
 </html>
